@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+	<title>Māori Dictionary</title>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>
+				Māori Dictionary
+			</h1>
+
+		</header>
+	</div>
+
+	<div class="container">
+		<nav>
+			<a href="/"><button type="button" style="float: left;">Home</button></a>
+			<div class="dropdown" style="width: fit-content; float: left;">
+				<div class="dropdown-btn">
+					<button style="float: left;" class="categories-button">Categories</button>
+					<div class="dropdown-content">
+						<a href="/categories/words-category">Category 1</a>
+						<a href="#">Category 2</a>
+						<a href="#">Category 3</a>
+					</div>
+				</div>
+			</div>
+            <a href="/signup"><button type="button" style="float: right;">Signup</button></a>
+            <div class="input-container" style="float: right;">
+				<input type="search" placeholder="Search..." style="float: right;">
+			</div>
+		</nav>
+	</div>
+	<main>
+		{% block main %}
+        {% endblock %}
+	</main>
+</body>
+</html>

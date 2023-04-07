@@ -1,0 +1,332 @@
+:root{
+    --backcolour: #ebeef1;
+    --maincolour: rgba(255, 255, 255, 0.70);
+    --shadowcolour: rgba(10, 99, 169, 0.16);
+    --fontcolour: #000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    background-color: var(--backcolour);
+}
+
+main {
+    min-height: 100vh;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: var(--backcolour);
+    border: none;
+    border-radius: 30px;
+    box-shadow:  inset 10px 10px 10px -1px var(--shadowcolour),
+                inset -10px -10px 10px -1px var(--maincolour);
+}
+
+.container{
+    align-items: center;
+    padding: 15px;
+    margin: 20px;
+    background: var(--backcolour);
+    border: none;
+    border-radius: 30px;
+    box-shadow:  inset 10px 10px 10px -1px var(--shadowcolour),
+                inset -10px -10px 10px -1px var(--maincolour);
+}
+
+button{
+    border: none;
+    text-align: center;
+    font-weight: 500;
+    padding: 20px;
+    margin: 10px;
+    width: auto;
+    background: var(--backcolour);
+    cursor: pointer;
+    border-radius: 50px;
+    color: #00a037;
+    box-shadow:  10px 10px 10px -1px var(--shadowcolour),
+                 -10px -10px 10px -1px var(--maincolour);
+}
+
+button:hover{
+    box-shadow: inset 10px 10px 10px -1px var(--shadowcolour),
+                inset -10px -10px 10px -1px var(--maincolour);
+}
+
+h1, h2, h3{
+    color: var(--fontcolour);
+    margin: 10px;
+    text-align: center;
+}
+
+p{
+    color: grey;
+    margin: 10px;
+    text-align: center;
+}
+
+nav::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+span{
+    text-align: center;
+    font-size: 100px;
+    top: 50%;
+    left: 50%;
+    /* margin: 10%; */
+    color: rgba(10, 99, 169, 0.16);
+    text-shadow: -8px -8px 12px var(--maincolour), 8px 8px 12px var(--shadowcolour);
+    caret-color: grey;
+    outline: none;
+}
+
+.dropdown-btn{
+    padding: 0;
+    margin: 0;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown-btn {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--backcolour);
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px -1px var(--shadowcolour),
+        -10px -10px 10px -1px var(--maincolour);
+    left: 0;
+    top: 100%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: var(--fontcolour);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 30px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #00a037;
+    color: #ebeef1;
+}
+
+.dropdown{
+    width: fit-content;
+    height: fit-content;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-btn:hover .categories-button{
+    box-shadow: inset 10px 10px 10px -1px var(--shadowcolour),
+    inset -10px -10px 10px -1px var(--maincolour);
+}
+
+.input-container{
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: .5rem;
+    background-color: var(--backcolour);
+    box-shadow: inset 10px 10px 10px -1px var(--shadowcolour),
+    inset -10px -10px 10px -1px var(--maincolour),
+    0 0 0 0.5rem var(--backcolour),
+    0 0 0 0.5rem var(--backcolour), 10px 10px 10px -1px var(--shadowcolour),
+        -10px -10px 10px -1px var(--maincolour);
+    position: relative;
+    overflow: hidden;
+}
+.input-container > input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fontcolour: #fff;
+
+        --backcolour: #161b22;
+        --shadowcolour: #13171d;
+        --maincolour: #191f27;
+    }
+}
+
+.grid-container{
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: minmax(300px, auto);
+    grid-auto-flow: dense;
+
+}
+
+body main .grid-container .container{
+    place-items: center;
+    text-align: center;
+    /*transition: all 5s ease-in-out;*/
+}
+body main .grid-container .container:hover{
+    box-shadow: 10px 10px 10px -1px var(--shadowcolour),
+                -10px -10px 10px -1px var(--maincolour);
+}
+
+.grid-container .container img{
+    border-radius: 30px;
+    position: relative;
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.grid-container .container:nth-child(1n){
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.grid-container .container:nth-child(2n){
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.error-title{
+    font-size: 5pc;
+}
+
+a{
+    text-decoration: none;
+    color: grey;
+}
+
+img{
+    max-width: 20%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 10px -1px var(--shadowcolour),
+                -10px -10px 10px -1px var(--maincolour);
+}
+
+.image{
+    text-align: center;
+}
+
+main{
+    position: relative;
+}
+
+input[type='submit']{
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    box-shadow: 10px 10px 10px -1px var(--shadowcolour),
+                -10px -10px 10px -1px var(--maincolour);
+    text-decoration: none;
+    border-radius: 30px;
+    background-color: var(--backcolour);
+    outline: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+form{
+    background-color: var(--backcolour);
+    width: 350px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 10px 10px 10px -1px var(--shadowcolour),
+                -10px -10px 10px -1px var(--maincolour);
+    padding: 40px 20px;
+    border-radius: 30px;
+}
+
+input[type='text'], input[type='password'], input[type='email']{
+    margin-bottom: 25px;
+    border: none;
+    background-color: transparent;
+    box-shadow: inset 10px 10px 10px -1px var(--shadowcolour),
+                inset -10px -10px 10px -1px var(--maincolour);
+    padding: 10px;
+    width: 90%;
+    border-radius: 30px;
+    outline: none;
+}
+
+h5{
+    margin: 10px;
+    color: var(--fontcolour);
+}
+
+input[type='radio']{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    height: 40px;
+    width: 100px;
+    box-shadow:  10px 10px 10px -1px var(--shadowcolour),
+                 -10px -10px 10px -1px var(--maincolour);
+    border: 5px solid var(--backcolour);
+    margin-right: 30px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type='radio']:after{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: grey;
+
+}
+
+
+#student:after{
+    content: 'Student';
+}
+
+#teacher:after{
+    content: 'Teacher';
+}
+
+input[type='radio']:checked, a:active{
+    box-shadow: -10px -10px 15px var(--maincolour),
+    10px 10px 15px var(--shadowcolour),
+    inset -10px -10px 15px var(--maincolour),
+    inset 10px 10px 15px var(--shadowcolour);
+}
+
+input[type='radio']:checked:after{
+    color: #00a037;
+}
+
+input{
+    color: #00a037;
+}
